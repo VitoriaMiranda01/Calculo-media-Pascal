@@ -1,0 +1,36 @@
+program Calculo_media;
+var 
+  A, B, C, media, mediaR: double;
+const
+  media_geral: integer = 6;
+  nota: string = 'Nota do aluno';
+  nota_recuperacao: string = 'Digite a nota de recuperação do aluno';
+begin
+  writeln ('Digite as notas no formato "0.00"!');
+  write (nota, ' A: ');
+  read (A);
+  write (nota, ' B: ');
+  read (B);  
+  write (nota, ' C: ');
+  read (C);
+  media := (A + B +C) / 3;
+  writeln ('A media da turma foi de: ', media :0:2);
+  if media >= 6 then
+     writeln ('Turma aprovada!')
+  else
+    begin
+     writeln ('Turma reprovada! Façam a recuperação.');
+     write (nota_recuperacao, ' A: ');
+     read (A);
+     write (nota_recuperacao, ' B: ');
+     read (B);
+     write (nota_recuperacao, ' C: ');
+     read (C);
+     mediaR := (A + B +C) / 3;
+     writeln ('A media de recuperação da turma foi de: ', mediaR:0:2);
+     if mediaR >= 6 then
+        writeln ('Turma aprovada!')
+     else 
+        writeln ('Turma reprovada!');
+    end;
+end.
